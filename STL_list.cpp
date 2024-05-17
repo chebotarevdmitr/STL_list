@@ -5,7 +5,8 @@ using namespace std;
 int main()
 {
 	list<int> allPleyers = { 2,9,6,7,3,1,4,8,3,2,9 }; // все игроки { список рейтингов игроков}
-
+	list<int> beginners;//список начинающие
+	list<int>profi; //список профи
 
 	cin.get();
 }
