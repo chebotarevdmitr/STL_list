@@ -2,9 +2,9 @@
 #include <list>
 using namespace std;
 
-void displyRatings(list<int>playersRatings) {
-	for (list<int>::iterator it = playersRatings.begin(); it != playersRatings.end(); it++) {
-		cout << "Playrs reting : " << *it << endl;
+void displyRatings(const list<int>& playersRatings) {
+	for (list<int>::const_iterator it = playersRatings.begin(); it != playersRatings.end(); it++) {
+		cout << "Playr reting : " << *it << endl;
 	}
 
 }
@@ -24,8 +24,10 @@ int main()
 			profi.push_back(rating);
 		}
 	}
-
-
+	cout << "Beginners :" << endl;
+	displyRatings(beginners);
+	cout << "PROFI :"<<endl;
+	displyRatings(profi);
 
 	cin.get();
 }
