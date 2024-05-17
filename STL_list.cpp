@@ -2,6 +2,13 @@
 #include <list>
 using namespace std;
 
+void displyRatings(list<int>playersRatings) {
+	for (list<int>::iterator it = playersRatings.begin(); it != playersRatings.end(); it++) {
+		cout << "Playrs reting : " << *it << endl;
+	}
+
+}
+
 int main()
 {
 	list<int> allPleyers = { 2,9,6,7,3,1,4,8,3,2,9 }; // все игроки { список рейтингов игроков}
