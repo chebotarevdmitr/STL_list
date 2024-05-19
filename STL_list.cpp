@@ -1,13 +1,23 @@
 ﻿#include <iostream>
 #include <list>
 using namespace std;
-
+// функция распечатки  рейтингов 
 void displyRatings(const list<int>& playersRatings) {
 	for (list<int>::const_iterator it = playersRatings.begin(); it != playersRatings.end(); it++) {
 		cout << "Playr reting : " << *it << endl;
 	}
-
 }
+//функция упорядовчивания
+void inssertPlayerIntoOrderedList(int newPlayersPating, list<int>& pleyaersByRating) {
+	for (list<int>::iterator it = pleyaersByRating.begin(); it != pleyaersByRating.end(); it++) {
+		if (*it > newPlayersPating) {
+			pleyaersByRating.insert(it, newPlayersPating);
+			return ;
+	    }  
+	}
+	pleyaersByRating.push_back(newPlayersPating);
+}
+
 
 int main()
 {
@@ -18,10 +28,10 @@ int main()
 	for (list<int>::iterator it = allPleyers.begin(); it != allPleyers.end(); it++) {
 		int rating = *it;
 		if (rating >= 1 && rating <= 5) {
-			beginners.push_back(rating);
+			inssertPlayerIntoOrderedList(rating, beginners)
 		}
 		else if (rating >= 6 && rating <= 10) {
-			profi.push_back(rating);
+			inssertPlayerIntoOrderedList(rating,profi);
 		}
 	}
 	cout << "Beginners :" << endl;
